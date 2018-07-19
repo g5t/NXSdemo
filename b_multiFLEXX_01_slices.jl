@@ -6,7 +6,7 @@
 
 using NXS, PyPlot2TikZ, Measureds
 # Some definitions to make loading the FLEXX data a bit nicer
-fdir="data/flexx/"
+fdir=joinpath(pwd(),"data","flexx","")
 loadFLEXX(o...)=NXS.loadFLEXX(o...,fdir*"scans"); # this is possible because NXS.loadFLEXX isn't exported
 corrFLEXX(o...)=NXS.applycorrections!(o...;int_corr_csv=fdir*"int_corr.csv",alive_csv=fdir*"alive.csv")
 
